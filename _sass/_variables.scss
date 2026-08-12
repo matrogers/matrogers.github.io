@@ -8,8 +8,11 @@ $grid-gutter:     10px !default;
 $white:             #fff;
 $black:             #333;
 
-// Styles
-$text_color:        $black;
+$ink:               #16171a;  // headings, hover states
+$text_color:        #3d4046;  // body copy
+$muted:             #8a8f98;  // kicker / job title
+$icon:              #b9bec6;  // social icons at rest
+$rule:              #d7dade;  // hairlines, link underlines
 
 // Font stack
 $body-font: Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol" !default;

@@ -1,6 +1,6 @@
 # Site settings
-title: "Mathew Rogers Homepage"
-description: "Data science and mathematics"
+title: "Mathew Rogers"
+description: "Mathematician and AI engineer in Montreal"
 
 # Build settings
 markdown: kramdown
@@ -8,53 +8,26 @@ sass:
   sass_dir: _sass
   style: compressed
 
-# Resume settings
+# Page settings
 resume_avatar:                  "true"
 resume_name:                    "Mathew Rogers"
-resume_title:                   "Data Scientist and Mathematician"
-
-# used for the contact button in _layouts/resume.html
+resume_title:                   "Mathematician & AI Engineer"
 resume_contact_email:           "mathewrogers@gmail.com"
 
-# the next two items are used for schema itemprops in _layouts/resume.html
-#resume_contact_telephone:       "555-7334"
-#resume_contact_address:         "742 Evergreen Terrace, Springfield"
+resume_header_intro: "<p>I'm currently up to my ears in AI-related engineering challenges, and enjoying every minute of it. My links are all above &mdash; LinkedIn, GitHub, Google Scholar, and X.</p><p>I have a PhD in mathematics (number theory, with a focus on conjectures around elliptic curves) and many years of programming experience since then, spanning machine learning, computer vision, mobile app programming, and large-scale streaming data. Previously at <a href=\"https://www.shopify.com\">Shopify</a>, <a href=\"https://mila.quebec/en/\">Mila</a>, and the <a href=\"https://math.illinois.edu/\">University of Illinois</a>, where I helped settle a 30-year-old conjecture in pure mathematics. Three US patents and nineteen <a href=\"https://scholar.google.ca/citations?user=cnec4HkAAAAJ&amp;hl=fr\">published papers</a> along the way.</p>"
 
-  #resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
-display_header_contact_info:    "false"
-
-resume_header_intro: "<p>I am a data scientist in Montreal. Over the last few years, I have worked in machine learning, streaming data, and computer vision. My various roles have all included a significant software engineering component. My PhD is in number theory with a focus on conjectures relating to elliptic curves. Feel free to reach out, I'm always looking for a challenge!</p>"
-
-# use "yes" to display the email contact button,
-# "no" to display an "I'm not looking for work" message,
-# or remove the resume_looking_for_work option entirely
-# to leave blank
-resume_looking_for_work:        "yes"
-
-# Decide which sections to use
-# comment out to hide
-resume_section_experience:      true
-resume_section_education:       true
-resume_section_projects:        true
-resume_section_skills:          false
-resume_section_recognition:     false
-resume_section_links:           true
-resume_section_associations:    false
-# resume_section_interests:       true
-
-# Resume social links
+# Social links
 # uncomment the options you wish to display, and add your own URL
 resume_social_links:
   resume_github_url:            "https://github.com/matrogers"
   resume_twitter_url:           "http://twitter.com/matrogersmtl"
-  # resume_dribbble_url:          "https://dribbble.com/jag"
-  # resume_facebook_url:          "insert Facebook URL here"
   resume_linkedin_url:          "https://www.linkedin.com/in/matrogers31"
   resume_scholar_url:           "https://scholar.google.ca/citations?user=cnec4HkAAAAJ&hl=fr"
+  # resume_dribbble_url:          "insert Dribbble URL here"
+  # resume_facebook_url:          "insert Facebook URL here"
   # resume_instagram_url:         "insert your Instagram URL here"
   # resume_website_url:           "http://matrogers.github.io"
-  # resume_medium_url:            "https://medium.com/@jglovier"
-resume_print_social_links:      true
+  # resume_medium_url:            "insert Medium URL here"
 
 # Design settings
 resume_theme:                   default
