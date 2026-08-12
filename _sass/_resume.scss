@@ -3,14 +3,13 @@
 
 // header: square photo on the left, name / title / links to its right
 
+// photo and text stay side by side at every width; the photo, the gap and
+// the type all scale with the viewport so nothing wraps in portrait
 .page-header {
   display: flex;
   align-items: center;
   gap: 2.25rem;
-
-  @include media_stacked {
-    display: block;
-  }
+  gap: clamp(1rem, 3.4vw, 2.25rem);
 
   // shrink-to-fit so the title and icons centre under the name itself,
   // not under the full width of the page
@@ -18,10 +17,10 @@
     flex: 0 1 auto;
     min-width: 0;
 
-    @include media_stacked {
-      width: -moz-fit-content;
-      width: fit-content;
-      max-width: 100%;
+    // in portrait the column is flush right against the photo instead
+    @include media_mobile {
+      flex: 1 1 auto;
+      text-align: right;
     }
   }
 
@@ -29,13 +28,12 @@
     flex: 0 0 auto;
     width: 190px;
     height: 190px;
+    width: clamp(84px, 25vw, 190px);
+    height: clamp(84px, 25vw, 190px);
     object-fit: cover;
     @include border-radius(6px);
     display: block;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .10), 0 10px 28px rgba(0, 0, 0, .08);
-
-    @include media_stacked { margin-bottom: 1.5rem; }
-    @include media_mobile { width: 150px; height: 150px; }
   }
 
   .header-name {
@@ -43,22 +41,34 @@
     font-weight: 800;
     // fluid so "Mathew Rogers" stays on one line at every width
     font-size: 2.75rem;
-    font-size: clamp(1.75rem, 6.4vw, 2.75rem);
+    font-size: clamp(1.25rem, 6.2vw, 2.75rem);
     letter-spacing: -.045em;
     line-height: 1.05;
     color: $ink;
     margin: 0;
+
+    @include media_mobile { text-align: right; }
   }
 
   .header-title {
     @include sans;
     font-weight: 600;
     font-size: .8125rem;
+    font-size: clamp(.6rem, 2.5vw, .8125rem);
     text-transform: uppercase;
-    letter-spacing: .14em;
+    letter-spacing: .13em;
+    white-space: nowrap;
     color: $muted;
+
+    // narrower than this there is no room for it on one line
+    @include media_max(359px) { white-space: normal; }
     text-align: center;
     margin: .85rem 0 0;
+
+    @include media_mobile {
+      text-align: right;
+      margin-top: .6rem;
+    }
   }
 }
 
@@ -69,9 +79,15 @@
   align-items: center;
   justify-content: center;
   gap: 1.9rem;
+  gap: clamp(.85rem, 3.6vw, 1.9rem);
   margin: 1.6rem 0 0;
   padding: 0;
   list-style: none;
+
+  @include media_mobile {
+    justify-content: flex-end;
+    margin-top: 1.1rem;
+  }
 
   .icon-link-item { display: block; }
 
@@ -86,6 +102,8 @@
       display: block;
       width: 23px;
       height: 23px;
+      width: clamp(19px, 5.2vw, 23px);
+      height: clamp(19px, 5.2vw, 23px);
     }
 
     // the icon set ships with hard-coded greys; let the link colour win
