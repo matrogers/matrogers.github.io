@@ -8,13 +8,22 @@
   align-items: center;
   gap: 2.25rem;
 
-  @include media_mobile {
+  @include media_stacked {
     display: block;
   }
 
   // shrink-to-fit so the title and icons centre under the name itself,
   // not under the full width of the page
-  .header-text { flex: 0 1 auto; min-width: 0; }
+  .header-text {
+    flex: 0 1 auto;
+    min-width: 0;
+
+    @include media_stacked {
+      width: -moz-fit-content;
+      width: fit-content;
+      max-width: 100%;
+    }
+  }
 
   .avatar {
     flex: 0 0 auto;
@@ -25,23 +34,20 @@
     display: block;
     box-shadow: 0 1px 2px rgba(0, 0, 0, .10), 0 10px 28px rgba(0, 0, 0, .08);
 
-    @include media_mobile {
-      width: 132px;
-      height: 132px;
-      margin-bottom: 1.5rem;
-    }
+    @include media_stacked { margin-bottom: 1.5rem; }
+    @include media_mobile { width: 150px; height: 150px; }
   }
 
   .header-name {
     @include sans;
     font-weight: 800;
+    // fluid so "Mathew Rogers" stays on one line at every width
     font-size: 2.75rem;
+    font-size: clamp(1.75rem, 6.4vw, 2.75rem);
     letter-spacing: -.045em;
     line-height: 1.05;
     color: $ink;
     margin: 0;
-
-    @include media_mobile { font-size: 2.125rem; }
   }
 
   .header-title {

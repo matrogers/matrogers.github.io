@@ -44,6 +44,12 @@
   @media (min-width: 600px) { @content; }
 }
 
+// below this the photo and text stack: there is no longer room to set the
+// name beside a 190px photo without it wrapping
+@mixin media_stacked {
+  @media (max-width: 760px) { @content; }
+}
+
 @mixin media_mobile {
   @media (max-width: 600px) { @content; }
 }
