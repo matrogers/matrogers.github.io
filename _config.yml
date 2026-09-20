@@ -1,6 +1,27 @@
 # Site settings
-title: "Mathew Rogers Homepage"
-description: "Data science and mathematics"
+title: "Mathew Rogers \u2014 Data Scientist and Mathematician"
+description: "Mathew Rogers is a data scientist and mathematician in Montreal, working in machine learning, streaming data, and computer vision. PhD in number theory."
+url: "https://matrogers.github.io"
+baseurl: ""
+lang: "en"
+
+# Entity signals for search engines: every other profile that is verifiably
+# the same person. Consumed by the JSON-LD block in _includes/head.html.
+seo_same_as:
+  - "https://github.com/matrogers"
+  - "https://www.linkedin.com/in/matrogers31"
+  - "https://scholar.google.ca/citations?user=cnec4HkAAAAJ&hl=fr"
+  - "https://orcid.org/0000-0001-9163-4890"
+  - "https://arxiv.org/a/rogers_m_1.html"
+  - "https://twitter.com/matrogersmtl"
+
+seo_knows_about:
+  - "Machine learning"
+  - "Data science"
+  - "Computer vision"
+  - "Streaming data"
+  - "Number theory"
+  - "Elliptic curves"
 
 # Build settings
 markdown: kramdown

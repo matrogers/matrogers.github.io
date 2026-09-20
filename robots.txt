@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matrogers.github.io/sitemap.xml
