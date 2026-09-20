@@ -1,171 +1,234 @@
-// Homepage styles
+// Resume styles
 // ---------------------------------------/
 
-// header: square photo on the left, name / title / links to its right
+// util
 
-// photo and text stay side by side at every width; the photo, the gap and
-// the type all scale with the viewport so nothing wraps in portrait
-.page-header {
-  display: flex;
-  align-items: center;
-  gap: 2.25rem;
-  gap: clamp(1rem, 3.4vw, 2.25rem);
+.section-header {
+  @include section_border;
+  margin-bottom: 1.5rem;
 
-  // shrink-to-fit so the title and icons centre under the name itself,
-  // not under the full width of the page
-  .header-text {
-    flex: 0 1 auto;
-    min-width: 0;
-
-    // in portrait the column is flush right against the photo instead
-    @include media_mobile {
-      flex: 1 1 auto;
-      text-align: right;
-    }
+  h2 {
+    @include sans;
+    font-weight: 900;
+    font-size: 1.75rem;
+    letter-spacing: -.05rem;
+    margin: 0;
   }
+}
+
+// page header styles
+
+.page-header { padding: 1.5rem 0;
 
   .avatar {
-    flex: 0 0 auto;
-    width: 190px;
-    height: 190px;
-    width: clamp(84px, 25vw, 190px);
-    height: clamp(84px, 25vw, 190px);
-    object-fit: cover;
-    @include border-radius(6px);
+    width: 195px;
+    max-width: 100%;
+    overflow: hidden;
+    @include border-radius(100px);
+    margin: 0 auto;
     display: block;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, .10), 0 10px 28px rgba(0, 0, 0, .08);
   }
 
   .header-name {
     @include sans;
-    font-weight: 800;
-    // fluid so "Mathew Rogers" stays on one line at every width
-    font-size: 2.75rem;
-    font-size: clamp(1.25rem, 6.2vw, 2.75rem);
-    letter-spacing: -.045em;
-    line-height: 1.05;
-    color: $ink;
-    margin: 0;
-
-    @include media_mobile { text-align: right; }
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    letter-spacing: -.15rem;
+    line-height: 1;
+    margin: 1rem 0 0;
   }
 
-  .header-title {
+  .header-contact-info {
     @include sans;
-    font-weight: 600;
-    font-size: .8125rem;
-    font-size: clamp(.6rem, 2.5vw, .8125rem);
-    text-transform: uppercase;
-    letter-spacing: .13em;
-    white-space: nowrap;
-    color: $muted;
-
-    // narrower than this there is no room for it on one line
-    @include media_max(359px) { white-space: normal; }
     text-align: center;
-    margin: .85rem 0 0;
+  }
+  .header-contact-info p a {
+    color: inherit;
+  }
 
-    @include media_mobile {
-      text-align: right;
-      margin-top: .6rem;
+  .title-bar {
+    @include section_border;
+    margin-top: 2rem;
+    padding: .4rem 0;
+    @include clearfix;
+
+    .header-title {
+      @include sans;
+      font-weight: 300;
+      font-size: 1.75rem;
+      line-height: 2rem;
+      letter-spacing: -.05rem;
+      text-align: center;
+      margin: 0 0 .5rem;
+
+      @include media_larger_than_mobile {
+        float: left;
+        margin: 0;
+      }
     }
   }
-}
 
-// social icons
+  .executive-summary {
+    @include media_larger_than_mobile { font-size: 1.125rem; }
+  }
+}
 
 .icon-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.9rem;
-  gap: clamp(.85rem, 3.6vw, 1.9rem);
-  margin: 1.6rem 0 0;
+  margin: 0;
   padding: 0;
   list-style: none;
+  position: relative;
+  top: 4px;
+  text-align: center;
+  border-top: 2px solid #c7c7c7;
+  padding-top: .4rem;
 
-  @include media_mobile {
-    justify-content: flex-end;
-    margin-top: 1.1rem;
+  @include media_larger_than_mobile {
+    float: right;
+    border-top: none;
+    padding-top: 0;
   }
 
-  .icon-link-item { display: block; }
+  .icon-link-item {
+    display: inline-block;
+    margin-left: 5px;
+  }
 
-  .icon-link {
-    display: block;
-    color: $icon;
-    @include transition(color .2s ease);
+  .icon-link { display: inline-block;
 
-    &:hover { color: $ink; }
+    &:hover .icon path {
+      fill: #333;
+      @include transition(all .2s ease);
+    }
+  }
 
-    svg {
-      display: block;
-      width: 23px;
-      height: 23px;
-      width: clamp(19px, 5.2vw, 23px);
-      height: clamp(19px, 5.2vw, 23px);
+  .icon {
+    height: 28px;
+  }
+}
+
+.contact-button {
+  @include border-radius(3px);
+  background-color: #efefef;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+  margin: 1.5rem auto;
+  width: 220px;
+  font-size: 1.375rem;
+  @include sans_light;
+  color: #333;
+  line-height: 55px;
+  @include transition(all .2s ease);
+
+  &:hover {
+    background-color: #333;
+    color: #fff;
+  }
+
+  &.not-looking { width: 400px; }
+}
+
+// resume content styles
+
+.content-section {
+  margin: 0 0 3rem;
+
+  .resume-item { margin-bottom: 2rem; }
+
+  .resume-item-title {
+    @include sans_bold;
+    margin: 0 0 .75rem;
+    font-size: 1.5rem;
+    letter-spacing: -.05rem;
+    line-height: 1;
+  }
+
+  .resume-item-details {
+    font-size: 1.125rem;
+    margin: 0 0 .75rem;
+    line-height: 1;
+
+    &.award-title {
+      font-size: 1rem;
+    }
+  }
+
+  .resume-item-title,
+  .resume-item-details,
+  .resume-item-copy,
+  .resume-item-list {
+    a {
+      color: #0645AD;
+      text-decoration: none;
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: none;
+        color: #333;
+      }
+    }
+  }
+
+  .resume-item-copy { margin: .75rem 0 0; }
+}
+
+// footer styles
+
+.page-footer {
+  border-top: 4px solid #c7c7c7;
+  padding-top: 1.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+
+  .footer-line {
+    margin: 0;
+    font-size: .875rem;
+    color: #999;
+
+    > a {
+      font-weight: 700;
+      color: #333;
+    }
+  }
+}
+
+.print-only { display: none !important }
+
+@media print {
+  .no-print { display: none !important }
+  .print-only { display: block !important }
+  body { font-size: 12px; line-height: 1rem; }
+  .page-header { padding: 1rem 0 .2rem;
+    .header-name {
+      @include sans_bold;
+      font-size: 2rem;
+      margin: 0 0 .2rem;
+    }
+  }
+  .section-header {
+    @include section_border_thin;
+    margin-bottom: 1rem;
+    h2 { font-size: 1.2rem; line-height: 1.5rem; }
+  }
+  .content-section {
+    margin: 0 0 1rem;
+    .resume-item { margin-bottom: 1rem; }
+    .resume-item-title {
+      font-size: 16px;
+      line-height: .7em;
     }
 
-    // the icon set ships with hard-coded greys; let the link colour win
-    svg path,
-    svg circle { fill: currentColor; }
-  }
-}
+    .resume-item-details {
+      font-size: 12px;
+      margin: 0 0 .75rem;
+      line-height: .7em;
+      font-style:italic;
 
-// intro copy
-
-.intro {
-  max-width: 42rem;
-  margin: 2.75rem 0 0;
-  padding-top: 2.5rem;
-  border-top: 1px solid $rule;
-  font-size: 1.0625rem;
-  line-height: 1.75;
-  color: $text_color;
-
-  @include media_mobile { font-size: 1rem; }
-
-  p {
-    margin: 0 0 1.15rem;
-
-    &:last-child { margin-bottom: 0; }
-  }
-
-  a {
-    color: $ink;
-    text-decoration: none;
-    border-bottom: 1px solid $rule;
-    @include transition(border-color .2s ease);
-
-    &:hover { border-bottom-color: $ink; }
-  }
-}
-
-// contact line
-
-.contact {
-  @include sans;
-  display: flex;
-  align-items: baseline;
-  gap: .85rem;
-  max-width: 42rem;
-  margin: 2.25rem 0 0;
-  font-size: .9375rem;
-
-  .contact-label {
-    font-weight: 600;
-    font-size: .75rem;
-    text-transform: uppercase;
-    letter-spacing: .14em;
-    color: $muted;
-  }
-
-  a {
-    color: $ink;
-    text-decoration: none;
-    border-bottom: 1px solid $rule;
-    @include transition(border-color .2s ease);
-
-    &:hover { border-bottom-color: $ink; }
+      &.award-title {
+        font-size: 11px;
+      }
+    }
   }
 }
