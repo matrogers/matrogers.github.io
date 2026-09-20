@@ -1,5 +1,5 @@
-# links
-- url: "https://mila.quebec/en/"
-  description: MILA
-- url: "https://mentoratquebec.org/"
-  description: Mentorat Quebec
+# Links
+# Enable this section by setting resume_section_links to true in _config.yml.
+#
+# - url: "https://example.org/"
+#   description: What this is and your relationship to it.
