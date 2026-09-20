@@ -1,10 +1,19 @@
 # Recognitions
-- award: Outstanding Achievement
-  organization: Springfield Young Professionals
-  year: 2010, 2014
-  summary: Awarded the Outstanding Achievement award for contributions made to the community and professional accomplishments.
+# DRAFT: every entry below is drawn from facts already stated elsewhere in
+# _data/ (experience.yml, education.yml). Review the wording, then set
+# resume_section_recognition to true in _config.yml to publish the section.
 
-- award: Most Likely To Succeed
-  organization: Springfield High School
-  year: 2004
-  summary: Voted Most Likely To Succeed by a panel of my high school peers.
+- award: NSF Postdoctoral Fellowship
+  organization: National Science Foundation
+  year: 2008 &mdash; 2011
+  summary: Awarded a National Science Foundation postdoctoral fellowship, held at the University of Illinois, Urbana-Champaign.
+
+- award: Invited Visitor
+  organization: Max Planck Institute for Mathematics, Bonn
+  year: 2009, 2010
+  summary: Invited to the Max Planck Institute for Mathematics for a total of one year as a visiting researcher.
+
+- award: Thesis Award Nominee
+  organization: University of British Columbia
+  year: 2008
+  summary: Mathematics department nominee for a Canada-wide thesis award.
