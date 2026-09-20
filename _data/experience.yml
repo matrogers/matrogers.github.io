@@ -1,4 +1,12 @@
 # Jobs
+# Founder and Engineer
+- company: ChessWave
+  company_link: https://chesswave.io/
+  position: Founder and Engineer
+  duration: 2023 &mdash; Present
+  summary: Founded and built ChessWave, a chess analysis platform that scans physical and digital boards into analyzable games. Computer vision for board recognition, engine integration for deep analysis, and the surrounding product and infrastructure. Currently in pre-launch.
+
+
 # Senior Data Scientist
 - company: Shopify
   company_link: https://www.shopify.com
