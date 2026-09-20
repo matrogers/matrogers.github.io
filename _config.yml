@@ -20,16 +20,16 @@ resume_contact_email:           "mathewrogers@gmail.com"
 #resume_contact_telephone:       "555-7334"
 #resume_contact_address:         "742 Evergreen Terrace, Springfield"
 
-  #resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
-display_header_contact_info:    "false"
+resume_header_contact_info:     "<a href=\"mailto:mathewrogers@gmail.com\" itemprop=\"email\">mathewrogers@gmail.com</a>"
+display_header_contact_info:    "true"
 
-resume_header_intro: "<p>I am a data scientist in Montreal. Over the last few years, I have worked in machine learning, streaming data, and computer vision. My various roles have all included a significant software engineering component. My PhD is in number theory with a focus on conjectures relating to elliptic curves. Feel free to reach out, I'm always looking for a challenge!</p>"
+resume_header_intro: "<p>I am a data scientist in Montreal. Over the last few years, I have worked in machine learning, streaming data, and computer vision. My various roles have all included a significant software engineering component. My PhD is in number theory with a focus on conjectures relating to elliptic curves.</p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
 # or remove the resume_looking_for_work option entirely
 # to leave blank
-resume_looking_for_work:        "yes"
+resume_looking_for_work:        ""
 
 # Decide which sections to use
 # comment out to hide
