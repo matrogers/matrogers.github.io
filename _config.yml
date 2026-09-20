@@ -12,8 +12,14 @@ seo_same_as:
   - "https://www.linkedin.com/in/matrogers31"
   - "https://scholar.google.ca/citations?user=cnec4HkAAAAJ&hl=fr"
   - "https://orcid.org/0000-0001-9163-4890"
+  - "https://www.scopus.com/authid/detail.uri?authorId=8326703100"
   - "https://arxiv.org/a/rogers_m_1.html"
   - "https://twitter.com/matrogersmtl"
+
+# Name variants that refer to the same person, so a search engine that meets
+# one of them can tie it back to this entity.
+seo_alternate_names:
+  - "Mat Rogers"
 
 seo_knows_about:
   - "Machine learning"

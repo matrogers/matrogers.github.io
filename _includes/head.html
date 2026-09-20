@@ -44,6 +44,7 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": {{ site.resume_name | jsonify }},
+    "alternateName": {{ site.seo_alternate_names | jsonify }},
     "jobTitle": {{ site.resume_title | jsonify }},
     "description": {{ seo_description | jsonify }},
     "url": {{ seo_url | jsonify }},
